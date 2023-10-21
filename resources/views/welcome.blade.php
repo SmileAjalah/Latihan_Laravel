@@ -834,7 +834,7 @@
 </head>
 
 <body class="antialiased">
-    <h1 class="text-center mt-3" style="font-size: 70px;color:blue"><strong>My Blog</strong></h1>
+    <h1 class="text-center mt-3" style="font-size: 70px;color:blue"><strong>{{ $text1 }}</strong></h1>
     <div class="container-fluid mt-4">
         <hr>
         <div class="row my-3">
@@ -857,7 +857,7 @@
             </div>
         </div>
         <hr>
-        <div class="my-3"><button class="btn btn-outline-primary btn-text-primary float-right">Add Post</button></div>
+        <div class="my-3"><button class="btn btn-outline-primary btn-text-primary float-right"><a href="/post">Add Post</a></button></div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
