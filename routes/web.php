@@ -22,6 +22,6 @@ Route::get('/db', function() {
 });
 Route::get('/tb', [KategoriController::class, 'index']);
 
-Route::post('/post/store', [PostController::class, 'Store'])->name('post.store');
+Route::post('/post/store', [PostController::class, 'Insert'])->name('post.store');
 
 Route::get('/post', [PostController::class, 'index']);
