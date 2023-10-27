@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\KategoriController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 
@@ -16,8 +17,11 @@ use App\Http\Controllers\PostController;
 */
 
 Route::get('/', [Controller::class, 'index']);
+Route::get('/db', function() {
+    return view('Kategori');
+});
+Route::get('/tb', [KategoriController::class, 'index']);
+
 Route::post('/post/store', [PostController::class, 'Store'])->name('post.store');
 
-Route::get('/post', function () {
-    return view('post');
-});
+Route::get('/post', [PostController::class, 'index']);

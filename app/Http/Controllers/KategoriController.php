@@ -2,18 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Post;
+use App\Models\Kategori;
 use Illuminate\Http\Request;
 
-
-class PostController extends Controller
+class KategoriController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('post');
+        return view('kategori', [
+            'kategori' => Kategori::all(),
+        ]);
     }
 
     /**
@@ -29,15 +30,7 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->validate([
-            'title' => '',
-            'paragraf' => ''
-        ]);
-        
-        Post::create($request->all());
-        return redirect('/')
-
-                        ->with('success','Product created successfully.');
+        //
     }
 
     /**

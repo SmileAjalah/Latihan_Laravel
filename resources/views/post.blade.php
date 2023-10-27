@@ -23,7 +23,7 @@
                         <label for="paragraf">Paragraf</label>
                         <textarea class="form-control" id="paragraf" name="paragraf" rows="3"></textarea>
                     </div>
-                    <button type="submit" class="btn btn-danger">Cancel</button>
+                    <button href="/" class="btn btn-danger">Cancel</button>
                     <button type="submit" class="btn btn-primary">Submit</button>
                   </form>
             </div>
