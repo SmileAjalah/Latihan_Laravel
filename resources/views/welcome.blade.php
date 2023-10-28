@@ -834,30 +834,23 @@
 </head>
 
 <body class="antialiased">
-    <h1 class="text-center mt-3" style="font-size: 70px;color:blue"><strong>{{ $text1 }}</strong></h1>
+    <h1 class="text-center mt-3" style="font-size: 70px;color:blue"><strong>Blog</strong></h1>
     <div class="container-fluid mt-4">
         <hr>
+        @foreach($welcome as $p)
         <div class="row my-3">
             <div class="col-6">
                 <img style="margin-left: 6%;width:700px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3YsUmd1ONYEKPuusUNJEIpdzIcSclHvsjLA&usqp=CAU" alt="">
             </div>
             <div class="col-6">
-                <h1 style="font-size: 30px;color:blue"><strong>My Favorite Place</strong></h1>
-                <h1 style="font-size: 20px;margin-top: 20px">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia voluptatibus ea quibusdam adipisci aliquid velit alias! Consectetur non fugiat ratione, quisquam aspernatur ea animi deleniti mollitia vitae aliquam fugit distinctio illum harum! Hic maiores cupiditate suscipit explicabo ut inventore, blanditiis sequi nulla reprehenderit possimus, laboriosam earum et quasi veniam voluptatum rerum, totam facere? Aperiam ex omnis voluptatibus asperiores earum delectus, molestias officia impedit commodi dolore similique assumenda repellendus dignissimos? Nemo, atque. Nisi optio perferendis magnam provident assumenda qui dolore recusandae quo, debitis cum tempore vero eum culpa, accusantium consequuntur saepe consequatur, fugiat aliquam temporibus excepturi omnis est! Facere, unde neque?</h1>
+                <h1 style="font-size: 30px;color:blue"><strong>{{ $p->title }}</strong></h1>
+                <h1 style="font-size: 20px;margin-top: 20px">{{ $p->paragraf }}</h1>
             </div>
         </div>
         <hr>
-        <div class="row my-3">
-            <div class="col-6">
-                <img style="margin-left: 6%;width:700px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3YsUmd1ONYEKPuusUNJEIpdzIcSclHvsjLA&usqp=CAU" alt="">
-            </div>
-            <div class="col-6">
-                <h1 style="font-size: 30px;color:blue"><strong>A Few Of My Favorite Places</strong></h1>
-                <h1 style="font-size: 20px;margin-top: 20px">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia voluptatibus ea quibusdam adipisci aliquid velit alias! Consectetur non fugiat ratione, quisquam aspernatur ea animi deleniti mollitia vitae aliquam fugit distinctio illum harum! Hic maiores cupiditate suscipit explicabo ut inventore, blanditiis sequi nulla reprehenderit possimus, laboriosam earum et quasi veniam voluptatum rerum, totam facere? Aperiam ex omnis voluptatibus asperiores earum delectus, molestias officia impedit commodi dolore similique assumenda repellendus dignissimos? Nemo, atque. Nisi optio perferendis magnam provident assumenda qui dolore recusandae quo, debitis cum tempore vero eum culpa, accusantium consequuntur saepe consequatur, fugiat aliquam temporibus excepturi omnis est! Facere, unde neque?</h1>
-            </div>
-        </div>
-        <hr>
-        <div class="my-3"><button class="btn btn-outline-primary btn-text-primary float-right"><a href="/post">Add Post</a></button></div>
+        @endforeach
+        <div class="my-3"><button class="btn btn-outline-primary btn-text-primary float-right mr-3"><a href="/post">Add Post</a></button></div>
+        <div class="my-3"><button class="btn btn-outline-success btn-text-success float-right"><a href="/post/list">List</a></button></div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

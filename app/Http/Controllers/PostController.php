@@ -13,7 +13,21 @@ class PostController extends Controller
      */
     public function index()
     {
+        return view('welcome', [
+            'welcome' => Post::all(),
+        ]);
+    }
+
+    public function form()
+    {
         return view('post');
+    }
+
+    public function list()
+    {
+        return view('list',[
+            'list' => Post::all(),
+        ]);
     }
 
     /**
@@ -30,14 +44,12 @@ class PostController extends Controller
     public function insert(Request $request)
     {
         $data = $request->validate([
-            'title' => '',
-            'paragraf' => ''
+            'title' => 'required|min:1',
+            'paragraf' => 'required|min:1'
         ]);
         
         Post::create($request->all());
-        return redirect('/')
-
-                        ->with('success','Product created successfully.');
+        return redirect('/')->with('success','Product created successfully.');
     }
 
     /**
@@ -45,7 +57,7 @@ class PostController extends Controller
      */
     public function show(string $id)
     {
-        //
+        return view('post.edit', compact('post'));
     }
 
     /**
@@ -53,7 +65,8 @@ class PostController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $edit = Post::findOrFail($id);
+        return view('edit', compact('edit'));
     }
 
     /**
@@ -61,7 +74,12 @@ class PostController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $this->validate($request, [
+            'title'     => 'required|min:1',
+            'content'   => 'required|min:1'
+        ]);
+
+        return redirect()->route('posts.index')->with(['success' => 'Data Berhasil Diubah!']);
     }
 
     /**
