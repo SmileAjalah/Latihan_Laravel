@@ -11,13 +11,14 @@
         <thead>
             <th>ID</th>
             <th>Title</th>
-            <th>Paragraf</th>
+            <th colspan="2">Paragraf</th>
         </thead>
         @foreach($kategori as $k)
         <tbody>
             <td>{{ $k->id }}</td>
             <td>{{ $k->nama }}</td>
             <td>{{ $k->deskripsi }}</td>
+            <td><a href="{{ route('kt.edit',$k->id) }}">Edit</a></td>
         </tbody>
         @endforeach
     </table>

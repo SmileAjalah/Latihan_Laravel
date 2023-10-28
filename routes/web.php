@@ -17,10 +17,8 @@ use App\Http\Controllers\PostController;
 */
 
 Route::get('/', [PostController::class, 'index']);
-Route::get('/db', function() {
-    return view('Kategori');
-});
-Route::get('/tb', [KategoriController::class, 'index']);
+Route::get('/kt', [KategoriController::class, 'index']);
+Route::get('/kt/edit/{id}', [KategoriController::class, 'edit'])->name('kt.edit');
 
 Route::post('/post/store', [PostController::class, 'Insert'])->name('post.store');
 
