@@ -21,6 +21,7 @@ Route::get('/', [PostController::class, 'index']);
 Route::get('/kt', [KategoriController::class, 'index'])->name('kt');
 Route::get('/kt/edit/{id}', [KategoriController::class, 'edit'])->name('kt.edit');
 Route::put('/kt/update/{id}', [KategoriController::class, 'update'])->name('kt.update');
+Route::delete('/kt/delete/{id}', [KategoriController::class, 'destroy'])->name('kt.delete');
 
 Route::post('/post/store', [PostController::class, 'Insert'])->name('post.store');
 Route::get('/post', [PostController::class, 'form']);

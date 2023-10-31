@@ -11,7 +11,7 @@
         <thead>
             <th>ID</th>
             <th>Title</th>
-            <th colspan="2">Paragraf</th>
+            <th colspan="3">Paragraf</th>
         </thead>
         @foreach($kategori as $k)
         <tbody>
@@ -19,7 +19,10 @@
             <td>{{ $k->nama }}</td>
             <td>{{ $k->deskripsi }}</td>
             <td><a href="{{ route('kt.edit',$k->id) }}">Edit</a></td>
-            <td><form action=""></form></td>
+            <td><form action="{{ route('kt.delete',$k->id) }}" method="POST"><button>Delete</button>
+            @csrf
+            @method('delete')
+            </form></td>
         </tbody>
         @endforeach
     </table>

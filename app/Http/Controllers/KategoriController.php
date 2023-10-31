@@ -68,6 +68,8 @@ class KategoriController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $kedit = Kategori::findOrFail($id);
+        $kedit->delete();
+        return redirect()->route('kt')->with(['success' => 'Data Berhasil Diubah!']);
     }
 }
