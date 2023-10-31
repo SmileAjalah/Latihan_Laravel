@@ -27,3 +27,4 @@ Route::get('/post', [PostController::class, 'form']);
 Route::get('/post/list', [PostController::class, 'list'])->name('post.list');
 Route::get('/post/edit/{id}', [PostController::class, 'edit'])->name('post.edit');
 Route::put('/post/update/{id}', [PostController::class, 'update'])->name('post.update');
+Route::delete('/post/delete/{id}', [PostController::class, 'destroy'])->name('post.delete');

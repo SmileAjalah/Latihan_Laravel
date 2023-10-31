@@ -19,6 +19,7 @@
             <td>{{ $k->nama }}</td>
             <td>{{ $k->deskripsi }}</td>
             <td><a href="{{ route('kt.edit',$k->id) }}">Edit</a></td>
+            <td><form action=""></form></td>
         </tbody>
         @endforeach
     </table>

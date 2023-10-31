@@ -28,7 +28,10 @@
                         <td>{{ $l->title }}</td>
                         <td>{{ $l->paragraf }}</td>
                         <td><button class="btn btn-outline-secondary btn-text-secondary"><a href="{{ route('post.edit',$l->id) }}">Edit</a></button></td>
-                        <td><button class="btn btn-outline-danger btn-text-danger">Delete</button></td>
+                        <td><form action="{{ route('post.delete',$l->id) }}" method="post"><button class="btn btn-outline-danger btn-text-danger">Delete</button>
+                            @csrf
+                            @method('delete')
+                        </form></td>
                     </tr>
                 @endforeach
             </tbody>
