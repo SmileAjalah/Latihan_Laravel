@@ -74,12 +74,14 @@ class PostController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $this->validate($request, [
-            'title'     => 'required|min:1',
-            'content'   => 'required|min:1'
+        $post = Post::findOrFail($id);
+
+        $post->update([
+            'title'     => $request->title,
+            'paragraf'   => $request->paragraf
         ]);
 
-        return redirect()->route('posts.index')->with(['success' => 'Data Berhasil Diubah!']);
+        return redirect()->route('post.list')->with(['success' => 'Data Berhasil Diubah!']);
     }
 
     /**
