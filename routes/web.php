@@ -17,15 +17,13 @@ use App\Http\Controllers\PostController;
 */
 
 Route::get('/', [PostController::class, 'index']);
-Route::get('/kt', [KategoriController::class, 'index']);
+
+Route::get('/kt', [KategoriController::class, 'index'])->name('kt');
 Route::get('/kt/edit/{id}', [KategoriController::class, 'edit'])->name('kt.edit');
+Route::put('/kt/update/{id}', [KategoriController::class, 'update'])->name('kt.update');
 
 Route::post('/post/store', [PostController::class, 'Insert'])->name('post.store');
-
 Route::get('/post', [PostController::class, 'form']);
-
 Route::get('/post/list', [PostController::class, 'list'])->name('post.list');
-
 Route::get('/post/edit/{id}', [PostController::class, 'edit'])->name('post.edit');
-
 Route::put('/post/update/{id}', [PostController::class, 'update'])->name('post.update');

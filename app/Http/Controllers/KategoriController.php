@@ -55,7 +55,12 @@ class KategoriController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $kedit = Kategori::findOrFail($id);
+        $kedit->update([
+            'nama'     => $request->nama,
+            'deskripsi'   => $request->deskripsi,
+        ]);
+        return redirect()->route('kt')->with(['success' => 'Data Berhasil Diubah!']);
     }
 
     /**
