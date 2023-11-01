@@ -4,6 +4,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Controllers\KategoriController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\TwoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,3 +30,5 @@ Route::get('/post/list', [PostController::class, 'list'])->name('post.list');
 Route::get('/post/edit/{id}', [PostController::class, 'edit'])->name('post.edit');
 Route::put('/post/update/{id}', [PostController::class, 'update'])->name('post.update');
 Route::delete('/post/delete/{id}', [PostController::class, 'destroy'])->name('post.delete');
+
+Route::get('/two', [TwoController::class, 'index']);
